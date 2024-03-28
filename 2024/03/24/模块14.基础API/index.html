@@ -1,0 +1,1141 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="java_模块14.基础API, valtsit">
+    <meta name="description" content="模块14.基础API12345678910111213141516171819202122232425262728293031323334353637383940模块13回顾:  1.异常:    a.分类:Throwable      E">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>java_模块14.基础API | valtsit</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">valtsit</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">valtsit</div>
+        <div class="logo-desc">
+            
+             『你就将不再是道具 而是成为人如其名的人』
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/valtsit/valtsit.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/valtsit/valtsit.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.webp')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">java_模块14.基础API</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-03-24
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="模块14-基础API"><a href="#模块14-基础API" class="headerlink" title="模块14.基础API"></a>模块14.基础API</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">模块<span class="number">13</span>回顾:</span><br><span class="line">  <span class="number">1.</span>异常:</span><br><span class="line">    a.分类:Throwable</span><br><span class="line">      Error:错误</span><br><span class="line">      Exception:异常</span><br><span class="line">          编译时期异常:一编译,就爆红(主要还是调用了某个方法,某个方法底层抛了一个编译时期异常)</span><br><span class="line">                      Exception以及子类(除了RuntimeException之外)</span><br><span class="line">          运行时期异常:一运行就报错</span><br><span class="line">                     RuntimeException以及子类</span><br><span class="line"> <span class="number">2.</span>异常处理:</span><br><span class="line">   <span class="keyword">throws</span></span><br><span class="line">   <span class="keyword">try</span>...<span class="keyword">catch</span></span><br><span class="line">     </span><br><span class="line"> <span class="number">3.</span><span class="keyword">finally</span>:不管是否有异常都会执行的代码,要配合<span class="keyword">try</span>...<span class="keyword">catch</span>使用</span><br><span class="line">     </span><br><span class="line">   <span class="keyword">finally</span>的使用场景:关闭资源使用</span><br><span class="line">       </span><br><span class="line"> <span class="number">4.</span>自定义异常:</span><br><span class="line">   a.定义一个类,继承Excption,变成了编译时期异常</span><br><span class="line">              继承RuntimeException,变成了运行时期异常</span><br><span class="line">   b.提供构造方法,便于设置异常信息</span><br><span class="line">       </span><br><span class="line"> <span class="number">5.</span>Object:所有类的根类,任何类都会直接或者间接继承Object类</span><br><span class="line">   a.toString方法:</span><br><span class="line">     没有重写,直接输出对象名,调用的是Object中的toString方法,输出地址值</span><br><span class="line">     重写了,直接输出对象名,默认调用重写的toString方法,输出对象内容</span><br><span class="line">   b.equals方法:</span><br><span class="line">     没有重写,比较对象地址值</span><br><span class="line">     重写了,比较对象内容</span><br><span class="line">         </span><br><span class="line">   c.clone方法:需要实现Cloneable接口,重写clone方法</span><br><span class="line">     复制一个地址值不一样,属性值一样的对象</span><br><span class="line">         </span><br><span class="line"> <span class="number">6.</span>经典接口:</span><br><span class="line">   Comparable</span><br><span class="line">   Comparator</span><br><span class="line">       </span><br><span class="line"> </span><br><span class="line">模块<span class="number">14</span>重点:</span><br><span class="line">  all</span><br></pre></td></tr></table></figure>
+
+<h1 id="第一章-String"><a href="#第一章-String" class="headerlink" title="第一章.String"></a>第一章.String</h1><h2 id="1-String介绍"><a href="#1-String介绍" class="headerlink" title="1.String介绍"></a>1.String介绍</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>概述:String 类代表字符串</span><br><span class="line"><span class="number">2.</span>特点:</span><br><span class="line">  a.Java 程序中的所有字符串字面值（如 <span class="string">&quot;abc&quot;</span> ）都作为此类的实例(对象)实现</span><br><span class="line">    凡是带双引号的,都是String的对象</span><br><span class="line">    <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abc&quot;</span></span><br><span class="line">    <span class="string">&quot;abc&quot;</span>就是对象;String就是对象的数据类型;s就是对象名</span><br><span class="line">        </span><br><span class="line">  b.字符串是常量,它们的值在创建之后不能更改</span><br><span class="line">    <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;hello&quot;</span></span><br><span class="line">    s+=<span class="string">&quot;world&quot;</span> -&gt; 会产生新对象</span><br><span class="line">        </span><br><span class="line">  c.String 对象是不可变的，所以可以共享</span><br><span class="line">    <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;abc&quot;</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;abc&quot;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2024/03/24/%E6%A8%A1%E5%9D%9714.%E5%9F%BA%E7%A1%80API/1704349458969.png" alt="1704349458969" style="zoom:80%;">
+
+
+
+<img src="/2024/03/24/%E6%A8%A1%E5%9D%9714.%E5%9F%BA%E7%A1%80API/1704349689851.png" alt="1704349689851" style="zoom:80%;">
+
+
+
+<h2 id="2-String的实现原理"><a href="#2-String的实现原理" class="headerlink" title="2.String的实现原理"></a>2.String的实现原理</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>jdk8的时候:String底层是一个被<span class="keyword">final</span>修饰的<span class="type">char</span>数组-&gt; <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">char</span>[] value;</span><br><span class="line"><span class="number">2.</span>jdk9开始到之后:底层是一个被<span class="keyword">final</span>修饰的<span class="type">byte</span>数组-&gt; <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">byte</span>[] value;</span><br><span class="line"></span><br><span class="line">  一个<span class="type">char</span>类型占<span class="number">2</span>个字节</span><br><span class="line">  一个<span class="type">byte</span>类型占<span class="number">1</span>个字节 -&gt; 省内存空间  </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串定义完之后,数组就创建好了,被<span class="keyword">final</span>一修饰,数组的地址值直接定死</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-String的创建"><a href="#3-String的创建" class="headerlink" title="3.String的创建"></a>3.String的创建</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>String()  -&gt; 利用String的无参构造创建String对象</span><br><span class="line"><span class="number">2.</span>String(String original) -&gt; 根据字符串创建String对象</span><br><span class="line"><span class="number">3.</span>String(<span class="type">char</span>[] value) -&gt; 根据<span class="type">char</span>数组创建String对象</span><br><span class="line"><span class="number">4.</span>String(<span class="type">byte</span>[] bytes) -&gt; 通过使用平台的默认字符集解码指定的 <span class="type">byte</span> 数组，构造一个新的 String</span><br><span class="line">                          a.平台:操作系统</span><br><span class="line">                          b.操作系统默认字符集:GBK</span><br><span class="line">                            GBK:一个中文占<span class="number">2</span>个字节</span><br><span class="line">                            UTF-<span class="number">8</span>:一个中文占<span class="number">3</span>个字节</span><br><span class="line">                            而且,中文对应的字节一般都是负数</span><br><span class="line">                                </span><br><span class="line">                            代码在idea中写的,idea启动的时候,会自动加一个启动参数,此启动参数为UTF-<span class="number">8</span></span><br><span class="line">                            -Dfile.encoding=UTF-<span class="number">8</span>    </span><br><span class="line">    </span><br><span class="line"><span class="number">5.</span>简化形式:</span><br><span class="line">  String 变量名 = <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo02String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1.String()  -&gt; 利用String的无参构造创建String对象</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(); <span class="comment">//</span></span><br><span class="line">        System.out.println(s1);</span><br><span class="line">        <span class="comment">//2.String(String original) -&gt; 根据字符串创建String对象</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">        System.out.println(s2);</span><br><span class="line">        <span class="comment">//3.String(char[] value) -&gt; 根据char数组创建String对象</span></span><br><span class="line">        <span class="type">char</span>[] chars = &#123;<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>&#125;;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(chars);</span><br><span class="line">        System.out.println(s3);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">          4.String(byte[] bytes) -&gt; 通过使用平台的默认字符集解码指定的 byte 数组，</span></span><br><span class="line"><span class="comment">                                    构造一个新的 String</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="type">byte</span>[] bytes1 = &#123;<span class="number">97</span>,<span class="number">98</span>,<span class="number">99</span>&#125;;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(bytes1);</span><br><span class="line">        System.out.println(s4);</span><br><span class="line"></span><br><span class="line">        <span class="type">byte</span>[] bytes2 = &#123;-<span class="number">97</span>,-<span class="number">98</span>,-<span class="number">99</span>&#125;;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s5</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(bytes2);</span><br><span class="line">        System.out.println(s5);</span><br><span class="line"></span><br><span class="line">        <span class="type">byte</span>[] bytes3 = &#123;-<span class="number">28</span>,-<span class="number">67</span>,-<span class="number">96</span>&#125;;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s6</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(bytes3);</span><br><span class="line">        System.out.println(s6);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5.简化形式</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s7</span> <span class="operator">=</span> <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">        System.out.println(s7);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>String(<span class="type">char</span>[] value, <span class="type">int</span> offset, <span class="type">int</span> count)-&gt;将<span class="type">char</span>数组的一部分转成String对象 </span><br><span class="line">         value:要转String的<span class="type">char</span>数组</span><br><span class="line">         offset:从数组的哪个索引开始转</span><br><span class="line">         count:转多少个</span><br><span class="line"><span class="number">2.</span>String(<span class="type">byte</span>[] bytes, <span class="type">int</span> offset, <span class="type">int</span> length)-&gt;将<span class="type">byte</span>数组的一部分转成String对象 </span><br><span class="line">         bytes:要转String的<span class="type">byte</span>数组</span><br><span class="line">         offset:从数组的哪个索引开始转</span><br><span class="line">         length:转多少个</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo03String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">       <span class="comment">/* 1.String(char[] value, int offset, int count)-&gt;将char数组的一部分转成String对象</span></span><br><span class="line"><span class="comment">        value:要转String的char数组</span></span><br><span class="line"><span class="comment">        offset:从数组的哪个索引开始转</span></span><br><span class="line"><span class="comment">        count:转多少个*/</span></span><br><span class="line">        <span class="type">char</span>[] chars = &#123;<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>,<span class="string">&#x27;d&#x27;</span>,<span class="string">&#x27;e&#x27;</span>,<span class="string">&#x27;f&#x27;</span>&#125;;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(chars,<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line">        System.out.println(s1);</span><br><span class="line">       <span class="comment">/* 2.String(byte[] bytes, int offset, int length)-&gt;将byte数组的一部分转成String对象</span></span><br><span class="line"><span class="comment">        bytes:要转String的byte数组</span></span><br><span class="line"><span class="comment">        offset:从数组的哪个索引开始转</span></span><br><span class="line"><span class="comment">        length:转多少个*/</span></span><br><span class="line">        <span class="type">byte</span>[] bytes = &#123;<span class="number">97</span>,<span class="number">98</span>,<span class="number">99</span>,<span class="number">100</span>,<span class="number">101</span>&#125;;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(bytes,<span class="number">0</span>,<span class="number">2</span>);</span><br><span class="line">        System.out.println(s2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-String-面试题"><a href="#4-String-面试题" class="headerlink" title="4.String 面试题"></a>4.String 面试题</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo04String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">        System.out.println(s1==s2);<span class="comment">//true</span></span><br><span class="line">        System.out.println(s1==s3);<span class="comment">//false</span></span><br><span class="line">        System.out.println(s2==s3);<span class="comment">//false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/03/24/%E6%A8%A1%E5%9D%9714.%E5%9F%BA%E7%A1%80API/1704352047301.png" alt="1704352047301" style="zoom:80%;">
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">问<span class="number">1</span>:<span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;abc&quot;</span>)共有几个对象? <span class="number">2</span>个</span><br><span class="line">    一个<span class="keyword">new</span>本身   一个是<span class="string">&quot;abc&quot;</span></span><br><span class="line">    </span><br><span class="line">问<span class="number">2</span>:<span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;abc&quot;</span>)共创建了几个对象?  <span class="number">1</span>个或者<span class="number">2</span>个</span><br><span class="line">    就看abc有没有提前创建出来了</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/03/24/%E6%A8%A1%E5%9D%9714.%E5%9F%BA%E7%A1%80API/1704352535904.png" alt="1704352535904" style="zoom:80%;"><img src="/img/1704352863873.png" alt="1704352863873"></p>
+<h2 id="5-字符串常见问题"><a href="#5-字符串常见问题" class="headerlink" title="5.字符串常见问题"></a>5.字符串常见问题</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo05String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;world&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s3</span> <span class="operator">=</span> <span class="string">&quot;helloworld&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s4</span> <span class="operator">=</span> <span class="string">&quot;hello&quot;</span>+<span class="string">&quot;world&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s5</span> <span class="operator">=</span> s1+<span class="string">&quot;world&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s6</span> <span class="operator">=</span> s1+s2;</span><br><span class="line"></span><br><span class="line">        System.out.println(s3==s4);<span class="comment">//true</span></span><br><span class="line">        System.out.println(s3==s5);<span class="comment">//false</span></span><br><span class="line">        System.out.println(s3==s6);<span class="comment">//false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>1.字符串拼接,如果等号右边是字符串字面值拼接,不会产生新对象</p>
+<p>  2.字符串拼接,如果等号右边有变量参数拼接,会产生新字符串对象</p>
+  <img src="/2024/03/24/%E6%A8%A1%E5%9D%9714.%E5%9F%BA%E7%A1%80API/1704352874861.png" alt="1704352874861" style="zoom:80%;">
+</blockquote>
+<h1 id="第二章-String的方法"><a href="#第二章-String的方法" class="headerlink" title="第二章.String的方法"></a>第二章.String的方法</h1><h2 id="1-判断方法"><a href="#1-判断方法" class="headerlink" title="1.判断方法"></a>1.判断方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(String s)</span> -&gt; 比较字符串内容</span><br><span class="line"><span class="type">boolean</span> <span class="title function_">equalsIgnoreCase</span><span class="params">(String s)</span> -&gt; 比较字符串内容,忽略大小写           </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo01String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">s3</span> <span class="operator">=</span> <span class="string">&quot;Abc&quot;</span>;</span><br><span class="line">        System.out.println(s1==s2);<span class="comment">//比较地址值了</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//boolean equals(String s) -&gt; 比较字符串内容</span></span><br><span class="line">        System.out.println(s1.equals(s2));</span><br><span class="line">        <span class="comment">//boolean equalsIgnoreCase(String s) -&gt; 比较字符串内容,忽略大小写</span></span><br><span class="line">        System.out.println(s1.equalsIgnoreCase(s3));</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;=========================&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">s4</span> <span class="operator">=</span> <span class="string">&quot;123&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s5</span> <span class="operator">=</span> <span class="string">&quot;一二三&quot;</span>;</span><br><span class="line">        System.out.println(s4.equalsIgnoreCase(s5));<span class="comment">//false</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s6</span> <span class="operator">=</span> <span class="string">&quot;壹贰叁&quot;</span>;</span><br><span class="line">        System.out.println(s5.equalsIgnoreCase(s6));<span class="comment">//false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-练习1"><a href="#2-练习1" class="headerlink" title="2.练习1"></a>2.练习1</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">已知用户名和密码，请用程序实现模拟用户登录。总共给三次机会，登录成功与否，给出相应的提示</span><br><span class="line">步骤:</span><br><span class="line">  <span class="number">1.</span>先定义两个字符串,表示注册过的用户名和密码</span><br><span class="line">  <span class="number">2.</span>创建Scanner对象,键盘录入用户名和密码</span><br><span class="line">  <span class="number">3.</span>比较,如果输入的用户名和密码跟已经注册过的用户名和密码内容一样,就登录成功,否则就登录失败</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo02String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1.先定义两个字符串,表示注册过的用户名和密码</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;123&quot;</span>;</span><br><span class="line">        <span class="comment">//2.创建Scanner对象,键盘录入用户名和密码</span></span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;请您输入用户名:&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> sc.next();</span><br><span class="line">            System.out.println(<span class="string">&quot;请您输入密码:&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">pwd</span> <span class="operator">=</span> sc.next();</span><br><span class="line">            <span class="comment">//3.比较,如果输入的用户名和密码跟已经注册过的用户名和密码内容一样,就登录成功,否则就登录失败</span></span><br><span class="line">            <span class="keyword">if</span> (name.equals(username) &amp;&amp; pwd.equals(password)) &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;登录成功&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (i == <span class="number">2</span>) &#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;账号冻结&quot;</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;登录失败!&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.b_stringmethod;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo03String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//String s = &quot;abc&quot;;</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">//method(s);</span></span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">        method01(s1,s2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      工具类:Objects</span></span><br><span class="line"><span class="comment">      方法:判断两个对象是否相等 -&gt; 自带防空指针作用</span></span><br><span class="line"><span class="comment">          public static boolean equals(Object a, Object b) &#123;</span></span><br><span class="line"><span class="comment">             return (a == b) || (a != null &amp;&amp; a.equals(b));</span></span><br><span class="line"><span class="comment">          &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method01</span><span class="params">(String s1, String s2)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (Objects.equals(s1,s2))&#123;</span><br><span class="line">          System.out.println(<span class="string">&quot;是abc&quot;</span>);</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          System.out.println(<span class="string">&quot;不是abc&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      如果传递过来的对象是null,再去点其他方法,就会空指针</span></span><br><span class="line"><span class="comment">      解决:不要让一个字符串变量去点,用确定的字符串去点,可以防空</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="comment">/*if (s.equals(&quot;abc&quot;))&#123;</span></span><br><span class="line"><span class="comment">            System.out.println(&quot;是abc&quot;);</span></span><br><span class="line"><span class="comment">        &#125;else&#123;</span></span><br><span class="line"><span class="comment">            System.out.println(&quot;不是abc&quot;);</span></span><br><span class="line"><span class="comment">        &#125;*/</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="string">&quot;abc&quot;</span>.equals(s))&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;是abc&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;不是abc&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</blockquote>
+<h2 id="3-获取功能"><a href="#3-获取功能" class="headerlink" title="3.获取功能"></a>3.获取功能</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">length</span><span class="params">()</span> -&gt; 获取字符串长度</span><br><span class="line">String <span class="title function_">concat</span><span class="params">(String s)</span>-&gt; 字符串拼接,返回新串儿</span><br><span class="line"><span class="type">char</span> <span class="title function_">charAt</span><span class="params">(<span class="type">int</span> index)</span> -&gt; 根据索引获取对应的字符</span><br><span class="line"><span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(String s)</span> -&gt; 获取指定字符串在大字符串中第一次出现的索引位置</span><br><span class="line">String <span class="title function_">subString</span><span class="params">(<span class="type">int</span> beginIndex)</span> -&gt; 截取字符串,从指定索引开始截取到最后,返回新串儿</span><br><span class="line">String <span class="title function_">subString</span><span class="params">(<span class="type">int</span> beginIndex,<span class="type">int</span> endIndex)</span> -&gt; 截取字符串,从beginIndex开始到endIndex结束</span><br><span class="line">                                                 含头不含尾,返回新串儿</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo04String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;abcdefg&quot;</span>;</span><br><span class="line">        <span class="comment">//int length() -&gt; 获取字符串长度</span></span><br><span class="line">        System.out.println(s1.length());</span><br><span class="line">        <span class="comment">//String concat(String s)-&gt; 字符串拼接,返回新串儿</span></span><br><span class="line">        System.out.println(s1.concat(<span class="string">&quot;haha&quot;</span>));</span><br><span class="line">        <span class="comment">//char charAt(int index) -&gt; 根据索引获取对应的字符</span></span><br><span class="line">        System.out.println(s1.charAt(<span class="number">0</span>));</span><br><span class="line">        <span class="comment">//int indexOf(String s) -&gt; 获取指定字符串在大字符串中第一次出现的索引位置</span></span><br><span class="line">        System.out.println(s1.indexOf(<span class="string">&quot;a&quot;</span>));</span><br><span class="line">        <span class="comment">//String subString(int beginIndex) -&gt; 截取字符串,从指定索引开始截取到最后,返回新串儿</span></span><br><span class="line">        System.out.println(s1.substring(<span class="number">3</span>));</span><br><span class="line">        <span class="comment">//String subString(int beginIndex,int endIndex) -&gt; 截取字符串,从beginIndex开始到endIndex结束</span></span><br><span class="line">        <span class="comment">//含头不含尾,返回新串儿</span></span><br><span class="line">        System.out.println(s1.substring(<span class="number">1</span>,<span class="number">6</span>));</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-练习2"><a href="#4-练习2" class="headerlink" title="4.练习2"></a>4.练习2</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">遍历字符串</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo05String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abcdefg&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            System.out.println(s.charAt(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-转换功能"><a href="#5-转换功能" class="headerlink" title="5.转换功能"></a>5.转换功能</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span><span class="type">char</span>[] toCharArray() -&gt; 将字符串转成<span class="type">char</span>数组</span><br><span class="line"><span class="number">2.</span><span class="type">byte</span>[] getBytes() -&gt; 将字符串转成<span class="type">byte</span>数组</span><br><span class="line"><span class="number">3.</span>String <span class="title function_">replace</span><span class="params">(CharSequence c1,CharSequence c2)</span>-&gt; 替换字符</span><br><span class="line">                 CharSequence-&gt;String的接口</span><br><span class="line">    </span><br><span class="line"><span class="number">4.</span><span class="type">byte</span>[] getBytes(String charsetName) -&gt; 按照指定的编码将字符串转成<span class="type">byte</span>数组    </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo06String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> UnsupportedEncodingException &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abcdefg&quot;</span>;</span><br><span class="line">        <span class="comment">//1.char[] toCharArray() -&gt; 将字符串转成char数组</span></span><br><span class="line">        <span class="type">char</span>[] chars = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; chars.length; i++) &#123;</span><br><span class="line">            System.out.println(chars[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;===============&quot;</span>);</span><br><span class="line">        <span class="comment">//2.byte[] getBytes() -&gt; 将字符串转成byte数组</span></span><br><span class="line">        <span class="type">byte</span>[] bytes = s.getBytes();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; bytes.length; i++) &#123;</span><br><span class="line">            System.out.println(bytes[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;===============&quot;</span>);</span><br><span class="line">        <span class="comment">//3.String replace(CharSequence c1,CharSequence c2)-&gt; 替换字符 CharSequence-&gt;String的接口</span></span><br><span class="line">        System.out.println(s.replace(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;z&quot;</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;===============&quot;</span>);</span><br><span class="line">        <span class="comment">//4.byte[] getBytes(String charsetName) -&gt; 按照指定的编码将字符串转成byte数组</span></span><br><span class="line">        <span class="type">byte</span>[] bytes1 = <span class="string">&quot;你好&quot;</span>.getBytes(<span class="string">&quot;GBK&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; bytes1.length; i++) &#123;</span><br><span class="line">            System.out.println(bytes1[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="7-练习4"><a href="#7-练习4" class="headerlink" title="7.练习4"></a>7.练习4</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">键盘录入一个字符串，统计该字符串中大写字母字符，小写字母字符，数字字符出现的次数(不考虑其他字符)</span><br><span class="line">步骤:</span><br><span class="line">  <span class="number">1.</span>创建Scanner对象,键盘录入</span><br><span class="line">  <span class="number">2.</span>定义三个变量,用来统计</span><br><span class="line">  <span class="number">3.</span>调用next方法录入一个字符串,遍历字符串,将每一个字符拿出来</span><br><span class="line">  <span class="number">4.</span>统计大写字母</span><br><span class="line">    A-Z -&gt; <span class="number">65</span>-<span class="number">90</span></span><br><span class="line">    比如:B -&gt; <span class="number">66</span> -&gt; 在<span class="number">65</span>-<span class="number">90</span>之间,证明就是大写字母</span><br><span class="line">  <span class="number">5.</span>统计小写字母</span><br><span class="line">    a-z -&gt; <span class="number">97</span>-<span class="number">122</span></span><br><span class="line">    比如:b -&gt; <span class="number">98</span> -&gt; 在<span class="number">97</span>-<span class="number">122</span>之间,证明就是小写字母</span><br><span class="line">  <span class="number">6.</span>统计数字:</span><br><span class="line">    <span class="number">0</span>-<span class="number">9</span> -&gt; <span class="number">48</span>-<span class="number">57</span></span><br><span class="line">    比如:字符<span class="number">1</span> -&gt; <span class="number">49</span> -&gt; 在<span class="number">48</span>-<span class="number">57</span>之间,证明就是数字</span><br><span class="line">  <span class="number">7.</span>将统计结果打印出来</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo07String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1.创建Scanner对象,键盘录入</span></span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="comment">//2.定义三个变量,用来统计</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">big</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">small</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//3.调用next方法录入一个字符串,遍历字符串,将每一个字符拿出来</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">data</span> <span class="operator">=</span> sc.next();</span><br><span class="line">        <span class="type">char</span>[] chars = data.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; chars.length; i++) &#123;</span><br><span class="line">            <span class="type">char</span> <span class="variable">num</span> <span class="operator">=</span> chars[i];</span><br><span class="line"></span><br><span class="line">             <span class="comment">/*4.统计大写字母</span></span><br><span class="line"><span class="comment">                  A-Z -&gt; 65-90</span></span><br><span class="line"><span class="comment">                  比如:B -&gt; 66 -&gt; 在65-90之间,证明就是大写字母*/</span></span><br><span class="line">            <span class="keyword">if</span> (num&gt;=<span class="string">&#x27;A&#x27;</span> &amp;&amp; num&lt;=<span class="string">&#x27;Z&#x27;</span>)&#123;</span><br><span class="line">                big++;</span><br><span class="line">            &#125;</span><br><span class="line">             <span class="comment">/*5.统计小写字母</span></span><br><span class="line"><span class="comment">                  a-z -&gt; 97-122</span></span><br><span class="line"><span class="comment">                  比如:b -&gt; 98 -&gt; 在97-122之间,证明就是小写字母*/</span></span><br><span class="line">            <span class="keyword">if</span> (num&gt;=<span class="string">&#x27;a&#x27;</span> &amp;&amp; num&lt;=<span class="string">&#x27;z&#x27;</span>)&#123;</span><br><span class="line">                small++;</span><br><span class="line">            &#125;</span><br><span class="line">             <span class="comment">/*6.统计数字:</span></span><br><span class="line"><span class="comment">                  0-9 -&gt; 48-57</span></span><br><span class="line"><span class="comment">                  比如:字符1 -&gt; 49 -&gt; 在48-57之间,证明就是数字*/</span></span><br><span class="line">            <span class="keyword">if</span> (num&gt;=<span class="string">&#x27;0&#x27;</span> &amp;&amp; num&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;</span><br><span class="line">                number++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//7.将统计结果打印出来</span></span><br><span class="line">        System.out.println(<span class="string">&quot;大写有&quot;</span>+big+<span class="string">&quot;个&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;小写有&quot;</span>+small+<span class="string">&quot;个&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;数字有&quot;</span>+number+<span class="string">&quot;个&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="8-分割功能"><a href="#8-分割功能" class="headerlink" title="8.分割功能"></a>8.分割功能</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>String[] split(String regex)-&gt;按照指定的规则分割字符串</span><br><span class="line">  注意:regex写的是正则表达式 -&gt; . 在正则表达式中代表任意一个字符</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo08String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abc,txt&quot;</span>;</span><br><span class="line">        String[] split = s.split(<span class="string">&quot;,&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; split.length; i++) &#123;</span><br><span class="line">            System.out.println(split[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;===============&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;haha.hehe&quot;</span>;</span><br><span class="line">        String[] split1 = s2.split(<span class="string">&quot;\\.&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; split1.length; i++) &#123;</span><br><span class="line">            System.out.println(split1[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="第三章-其他方法"><a href="#第三章-其他方法" class="headerlink" title="第三章.其他方法"></a>第三章.其他方法</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span><span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(String s)</span> -&gt; 判断老串儿中是否包含指定的串儿</span><br><span class="line"><span class="number">2.</span><span class="type">boolean</span> <span class="title function_">endsWith</span><span class="params">(String s)</span> -&gt; 判断老串儿是否以指定的串儿结尾</span><br><span class="line"><span class="number">3.</span><span class="type">boolean</span> <span class="title function_">startsWith</span><span class="params">(String s)</span> -&gt; 判断老串儿是否以指定的串儿开头</span><br><span class="line"><span class="number">4.</span>String <span class="title function_">toLowerCase</span><span class="params">()</span>-&gt; 将字母转成小写</span><br><span class="line"><span class="number">5.</span>String <span class="title function_">toUpperCase</span><span class="params">()</span> -&gt; 将字母转成大写</span><br><span class="line"><span class="number">6.</span>String <span class="title function_">trim</span><span class="params">()</span> -&gt; 去掉字符串两端空格</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo09String</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;abcdefg&quot;</span>;</span><br><span class="line">        <span class="comment">//1.boolean contains(String s) -&gt; 判断老串儿中是否包含指定的串儿</span></span><br><span class="line">        System.out.println(s.contains(<span class="string">&quot;a&quot;</span>));</span><br><span class="line">        <span class="comment">//2.boolean endsWith(String s) -&gt; 判断老串儿是否以指定的串儿结尾</span></span><br><span class="line">        System.out.println(s.endsWith(<span class="string">&quot;g&quot;</span>));</span><br><span class="line">        <span class="comment">//3.boolean startsWith(String s) -&gt; 判断老串儿是否以指定的串儿开头</span></span><br><span class="line">        System.out.println(s.startsWith(<span class="string">&quot;a&quot;</span>));</span><br><span class="line">        <span class="comment">//4.String toLowerCase()-&gt; 将字母转成小写</span></span><br><span class="line">        System.out.println(<span class="string">&quot;ADbcda&quot;</span>.toLowerCase());</span><br><span class="line">        <span class="comment">//5.String toUpperCase() -&gt; 将字母转成大写</span></span><br><span class="line">        System.out.println(<span class="string">&quot;dafadRWERW&quot;</span>.toUpperCase());</span><br><span class="line">        <span class="comment">//6.String trim() -&gt; 去掉字符串两端空格</span></span><br><span class="line">        System.out.println(<span class="string">&quot; hadfhad hdsfha  sfhdsh &quot;</span>.trim());</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;==================&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot; hadfhad hdsfha  sfhdsh &quot;</span>.replace(<span class="string">&quot; &quot;</span>,<span class="string">&quot;&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="第四章-StringBuilder类"><a href="#第四章-StringBuilder类" class="headerlink" title="第四章.StringBuilder类"></a>第四章.StringBuilder类</h1><h2 id="1-StringBuilder的介绍"><a href="#1-StringBuilder的介绍" class="headerlink" title="1.StringBuilder的介绍"></a>1.StringBuilder的介绍</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>概述:一个可变的字符序列,此类提供了一个与StringBuffer兼容的一套API,但是不保证同步(线程不安全,效率高)</span><br><span class="line"><span class="number">2.</span>作用:主要是字符串拼接</span><br><span class="line"><span class="number">3.</span>问题:</span><br><span class="line">  a.刚讲完String,String也能做字符串拼接,直接用+即可,但是为啥还要用StringBuilder去拼接呢?</span><br><span class="line">  b.原因:</span><br><span class="line">    String每拼接一次,就会产生新的字符串对象,就会在堆内存中开辟新的空间,如果拼接次数多了,会占用内存,效率比较底</span><br><span class="line">        </span><br><span class="line">    StringBuilder,底层自带一个缓冲区(没有被<span class="keyword">final</span>修饰的<span class="type">byte</span>数组)拼接字符串之后都会在此缓冲区中保存,在拼接的过程中,不会随意产生新对象,节省内存</span><br><span class="line">        </span><br><span class="line"><span class="number">4.</span>StringBuilder的特点:</span><br><span class="line">  a.底层自带缓冲区,此缓冲区是没有被<span class="keyword">final</span>修饰的<span class="type">byte</span>数组,默认长度为<span class="number">16</span></span><br><span class="line">  b.如果超出了数组长度,数组会自动扩容</span><br><span class="line">    创建一个新长度的新数组,将老数组的元素复制到新数组中,然后将新数组的地址值重新赋值给老数组</span><br><span class="line">  c.默认每次扩容老数组的<span class="number">2</span>倍+<span class="number">2</span></span><br><span class="line">    如果一次性添加的数据超出了默认的扩容数组长度(<span class="number">2</span>倍+<span class="number">2</span>),比如存了<span class="number">36</span>个字符,超出了第一次扩容的<span class="number">34</span>,就按照实际数据个数为准,就是以<span class="number">36</span>扩容</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-StringBuilder的使用"><a href="#2-StringBuilder的使用" class="headerlink" title="2.StringBuilder的使用"></a>2.StringBuilder的使用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>构造:</span><br><span class="line">  StringBuilder()</span><br><span class="line">  StringBuilder(String str)    </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo01StringBuilder</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        System.out.println(sb);</span><br><span class="line"></span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line">        System.out.println(sb1);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">常用方法:</span><br><span class="line">  StringBuilder <span class="title function_">append</span><span class="params">(任意类型数据)</span> -&gt; 字符串拼接,返回的是StringBuilder自己</span><br><span class="line">  StringBuilder <span class="title function_">reverse</span><span class="params">()</span>-&gt; 字符串翻转,返回的是StringBuilder自己</span><br><span class="line">  String <span class="title function_">toString</span><span class="params">()</span> -&gt; 将StringBuilder转成String-&gt; 用StringBuilder拼接字符串是为了效率,为了不占内存,那么拼完之后我们后续可能会对拼接好的字符串进行处理,就需要调用String中的方法,所以需要将StringBuilder转成String </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo02StringBuilder</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb1</span> <span class="operator">=</span> sb.append(<span class="string">&quot;张无忌&quot;</span>);</span><br><span class="line">        System.out.println(sb1);</span><br><span class="line">        System.out.println(sb);</span><br><span class="line">        System.out.println(sb==sb1);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;==============&quot;</span>);</span><br><span class="line">        <span class="comment">//链式调用</span></span><br><span class="line">        sb.append(<span class="string">&quot;赵敏&quot;</span>).append(<span class="string">&quot;周芷若&quot;</span>).append(<span class="string">&quot;小昭&quot;</span>);</span><br><span class="line">        System.out.println(sb);</span><br><span class="line"></span><br><span class="line">        sb.reverse();</span><br><span class="line">        System.out.println(sb);</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> sb.toString();</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">练习:键盘录入一个字符串,判断此字符串是否为<span class="string">&quot;回文内容&quot;</span>  </span><br><span class="line">    比如: abcba  上海自来水来自海上</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo03StringBuilder</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1.创建Scanner对象</span></span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">String</span> <span class="variable">data</span> <span class="operator">=</span> sc.next();</span><br><span class="line">        <span class="comment">//2.创建StringBuilder对象</span></span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>(data);</span><br><span class="line">        <span class="comment">//3.翻转</span></span><br><span class="line">        sb.reverse();</span><br><span class="line">        <span class="comment">//4.将StringBuilder转成String</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> sb.toString();</span><br><span class="line">        <span class="keyword">if</span> (data.equals(s))&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;是回文内容&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;不是回文内容&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-练习"><a href="#3-练习" class="headerlink" title="3.练习"></a>3.练习</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">定义一个数组,以[元素<span class="number">1</span>, 元素<span class="number">2</span>, 元素<span class="number">3.</span>.]的形式输出,用StringBuilder拼接</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">自己做</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>String:拼接字符串效率低,每拼接一次,都会产生一个新的字符串对象,耗费内存资源</p>
+<p>StringBuilder和StringBuffer区别:</p>
+<p>a.相同点:</p>
+<p>   用法一样,作用一样</p>
+<p>b.不同点:</p>
+<p>   StringBuilder:拼接效率比StringBuffer高</p>
+<p>​                            线程不安全</p>
+<p>   StringBuffer:效率比较底,线程安全</p>
+<p>拼接效率:StringBuilder&gt;StringBuffer&gt;String</p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">valtsit</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://valtsit.github.io/2024/03/24/%E6%A8%A1%E5%9D%9714.%E5%9F%BA%E7%A1%80API/">http://valtsit.github.io/2024/03/24/%E6%A8%A1%E5%9D%9714.%E5%9F%BA%E7%A1%80API/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">valtsit</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/03/24/07_%E7%AC%AC%E4%B8%83%E7%AB%A0%20%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.webp" class="responsive-img" alt="07_第七章 前端工程化">
+                        
+                        <span class="card-title">07_第七章 前端工程化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            valtsit
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/web/">
+                        <span class="chip bg-color">web</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/03/24/%E6%A8%A1%E5%9D%9715.%E5%B8%B8%E7%94%A8API/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.webp" class="responsive-img" alt="java_模块15.常用API">
+                        
+                        <span class="card-title">java_模块15.常用API</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            valtsit
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="599288682"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2024</span>
+            
+            <a href="/about" target="_blank">valtsit</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/valtsit" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:3493767495@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3493767495" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3493767495" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

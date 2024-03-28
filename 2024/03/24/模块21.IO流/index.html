@@ -1,0 +1,1184 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="java_模块21.IO流, valtsit">
+    <meta name="description" content="模块21.IO流123456789101112131415161718192021222324252627282930313233343536373839模块20回顾:  1.HashMap    a.特点:无序,无索引,key唯一,线程不">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>java_模块21.IO流 | valtsit</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">valtsit</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">valtsit</div>
+        <div class="logo-desc">
+            
+             『你就将不再是道具 而是成为人如其名的人』
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/valtsit/valtsit.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/valtsit/valtsit.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.webp')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">java_模块21.IO流</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-03-24
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="模块21-IO流"><a href="#模块21-IO流" class="headerlink" title="模块21.IO流"></a>模块21.IO流</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">模块<span class="number">20</span>回顾:</span><br><span class="line">  <span class="number">1.</span>HashMap</span><br><span class="line">    a.特点:无序,无索引,key唯一,线程不安全,可以存<span class="literal">null</span>键<span class="literal">null</span>值</span><br><span class="line">    b.数据结构:哈希表</span><br><span class="line">    c.方法:put remove get keySet entrySet  values  containsKey</span><br><span class="line">  <span class="number">2.</span>LinkedHashMap:</span><br><span class="line">    a.特点:有序,无索引,key唯一,线程不安全,可以存<span class="literal">null</span>键<span class="literal">null</span>值</span><br><span class="line">    b.数据结构:哈希表+双向链表</span><br><span class="line">        </span><br><span class="line">  <span class="number">3.</span>key如何去重复:重写hashCode和equals方法</span><br><span class="line">      </span><br><span class="line">  <span class="number">4.</span>TreeSet:是set接口实现类</span><br><span class="line">    a.特点:对元素排序,无索引,元素唯一,线程不安全,不可以存<span class="literal">null</span>键<span class="literal">null</span>值</span><br><span class="line">    b.构造:</span><br><span class="line">      TreeSet()</span><br><span class="line">      TreeSet(Comparator c)</span><br><span class="line">  <span class="number">5.</span>TreeMap:</span><br><span class="line">    a.特点:对 key排序,无索引,key唯一,线程不安全,不可以存<span class="literal">null</span>键<span class="literal">null</span>值</span><br><span class="line">    b.构造:</span><br><span class="line">      TreeMap()</span><br><span class="line">      TreeMap(Comparator c)</span><br><span class="line">  <span class="number">6.</span>Hashtable:是map接口的实现类</span><br><span class="line">    a.特点:无序,无索引,key唯一,线程安全,不能存<span class="literal">null</span>键<span class="literal">null</span>值</span><br><span class="line">    b.用法:和HashMap一样</span><br><span class="line">    c.数据结构:哈希表</span><br><span class="line">  <span class="number">7.</span>Vector: </span><br><span class="line">    a.特点:有序,有索引,元素可重复,线程安全</span><br><span class="line">    b.数据结构:数组</span><br><span class="line">  <span class="number">8.</span>Properties:是Hashtable子类</span><br><span class="line">    a.特点:无序,无索引,key唯一,线程安全,不能存<span class="literal">null</span>键<span class="literal">null</span>值,key和value都是String的</span><br><span class="line">    b.特有方法:</span><br><span class="line">      setProperty</span><br><span class="line">      getProperty</span><br><span class="line">      stringPropertyNames</span><br><span class="line">      <span class="title function_">load</span><span class="params">(IO流对象)</span> -&gt; 将流中数据加载到集合中</span><br><span class="line">          </span><br><span class="line"> 模块<span class="number">21</span>重点: </span><br><span class="line">   <span class="number">1.</span>分清楚IO流流向</span><br><span class="line">   <span class="number">2.</span>会字节流和字符流的读写操作    </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="第一章-File类"><a href="#第一章-File类" class="headerlink" title="第一章.File类"></a>第一章.File类</h1><h2 id="1-File类"><a href="#1-File类" class="headerlink" title="1.File类"></a>1.File类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">计算机常识:</span><br><span class="line">  <span class="number">1.</span>以.jpg结尾的一定是图片吗?</span><br><span class="line">    不一定,有可能是文件夹</span><br><span class="line">      </span><br><span class="line">  <span class="number">2.</span>什么是文本文档?</span><br><span class="line">    用记事本打开,人能看懂的文件 -&gt; txt  html css  </span><br><span class="line">  </span><br><span class="line">  <span class="number">3.</span>E:\Idea\io\<span class="number">1.</span>jpg 中的<span class="number">1.</span>jpg的父路径是谁?</span><br><span class="line">    E:\Idea\io</span><br><span class="line">        </span><br><span class="line">  <span class="number">4.</span>分隔符:</span><br><span class="line">    a.路径名称分隔符:</span><br><span class="line">      windows: \</span><br><span class="line">      linux: /    </span><br><span class="line">    b.路径分隔符:一个路径和其他路径之间的分隔符</span><br><span class="line">      ;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>概述:文件和目录(文件夹)路径名的抽象表示   </span><br><span class="line"><span class="number">2.</span>简单理解:</span><br><span class="line">  我们在创建File对象的时候,需要传递一个路径,这个路径定为到哪个文件或者文件夹上,我们的File就代表哪个对象</span><br><span class="line">  <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\Idea\io\1.jpg&quot;</span>)    </span><br></pre></td></tr></table></figure>
+
+<h2 id="2-File的静态成员"><a href="#2-File的静态成员" class="headerlink" title="2.File的静态成员"></a>2.File的静态成员</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> String pathSeparator:与系统有关的路径分隔符，为了方便，它被表示为一个字符串。</span><br><span class="line"><span class="keyword">static</span> String separator:与系统有关的默认名称分隔符，为了方便，它被表示为一个字符串。  </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo01File</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//file01();</span></span><br><span class="line">        file02();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      将来写代码如何正确编写一个路径用java代码</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">file02</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">path1</span> <span class="operator">=</span> <span class="string">&quot;E:\\Idea\\io&quot;</span>;</span><br><span class="line">        System.out.println(path1);</span><br><span class="line">        System.out.println(<span class="string">&quot;==================&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//要求代码写完,一次编写,到处运行</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">path2</span> <span class="operator">=</span> <span class="string">&quot;E:&quot;</span>+File.separator+<span class="string">&quot;Idea&quot;</span>+File.separator+<span class="string">&quot;io&quot;</span>;</span><br><span class="line">        System.out.println(path2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">file01</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//static String pathSeparator:与系统有关的路径分隔符，为了方便，它被表示为一个字符串。</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">pathSeparator</span> <span class="operator">=</span> File.pathSeparator;</span><br><span class="line">        System.out.println(<span class="string">&quot;pathSeparator = &quot;</span> + pathSeparator); <span class="comment">//  ;</span></span><br><span class="line">        <span class="comment">//static String separator:与系统有关的默认名称分隔符，为了方便，它被表示为一个字符串。</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">separator</span> <span class="operator">=</span> File.separator;</span><br><span class="line">        System.out.println(<span class="string">&quot;separator = &quot;</span> + separator); <span class="comment">//  \</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-File的构造方法"><a href="#3-File的构造方法" class="headerlink" title="3.File的构造方法"></a>3.File的构造方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">File(String parent, String child) 根据所填写的路径创建File对象</span><br><span class="line">     parent:父路径</span><br><span class="line">     child:子路径</span><br><span class="line">File(File parent, String child)  根据所填写的路径创建File对象</span><br><span class="line">     parent:父路径,是一个File对象</span><br><span class="line">     child:子路径</span><br><span class="line">File(String pathname)  根据所填写的路径创建File对象</span><br><span class="line">     pathname:直接指定路径   </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo02File</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//File(String parent, String child) 根据所填写的路径创建File对象</span></span><br><span class="line">        <span class="comment">//parent:父路径</span></span><br><span class="line">        <span class="comment">//child:子路径</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">file1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\\Idea\\io&quot;</span>, <span class="string">&quot;1.jpg&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;file1 = &quot;</span> + file1);</span><br><span class="line">        <span class="comment">//File(File parent, String child)  根据所填写的路径创建File对象</span></span><br><span class="line">        <span class="comment">//parent:父路径,是一个File对象</span></span><br><span class="line">        <span class="comment">//child:子路径</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">parent</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\\Idea\\io&quot;</span>);</span><br><span class="line">        <span class="type">File</span> <span class="variable">file2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(parent, <span class="string">&quot;1.jpg&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;file2 = &quot;</span> + file2);</span><br><span class="line">        <span class="comment">//File(String pathname)  根据所填写的路径创建File对象</span></span><br><span class="line">        <span class="comment">//pathname:直接指定路径</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">file3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\\Idea\\io\\1.jpg&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;file3 = &quot;</span> + file3);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>细节:</p>
+<p>  我们创建File对象的时候,传递的路径可以是不存在的,但是传递不存在的路径</p>
+</blockquote>
+<h2 id="4-File的获取方法"><a href="#4-File的获取方法" class="headerlink" title="4.File的获取方法"></a>4.File的获取方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String <span class="title function_">getAbsolutePath</span><span class="params">()</span> -&gt; 获取File的绝对路径-&gt;带盘符的路径</span><br><span class="line">String <span class="title function_">getPath</span><span class="params">()</span> -&gt;获取的是封装路径-&gt;<span class="keyword">new</span> <span class="title class_">File</span>对象的时候写的啥路径,获取的就是啥路径</span><br><span class="line">String <span class="title function_">getName</span><span class="params">()</span>  -&gt; 获取的是文件或者文件夹名称</span><br><span class="line"><span class="type">long</span> <span class="title function_">length</span><span class="params">()</span> -&gt; 获取的是文件的长度 -&gt; 文件的字节数   </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">file01</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//String getAbsolutePath() -&gt; 获取File的绝对路径-&gt;带盘符的路径</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;1.txt&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;file1.getAbsolutePath() = &quot;</span> + file1.getAbsolutePath());</span><br><span class="line">    <span class="comment">//String getPath() -&gt;获取的是封装路径-&gt;new File对象的时候写的啥路径,获取的就是啥路径</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;io\\1.txt&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;file2.getPath() = &quot;</span> + file2.getPath());</span><br><span class="line">    <span class="comment">//String getName()  -&gt; 获取的是文件或者文件夹名称</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\\Idea\\io\\1.jpg&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;file3.getName() = &quot;</span> + file3.getName());</span><br><span class="line">    <span class="comment">//long length() -&gt; 获取的是文件的长度 -&gt; 文件的字节数</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\\Idea\\io\\1.txt&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;file4.length() = &quot;</span> + file4.length());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-File的创建方法"><a href="#5-File的创建方法" class="headerlink" title="5.File的创建方法"></a>5.File的创建方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="title function_">createNewFile</span><span class="params">()</span>  -&gt; 创建文件</span><br><span class="line">        如果要创建的文件之前有,创建失败,返回<span class="literal">false</span></span><br><span class="line">        如果要创建的文件之前没有,创建成功,返回<span class="literal">true</span></span><br><span class="line">    </span><br><span class="line"><span class="type">boolean</span> <span class="title function_">mkdirs</span><span class="params">()</span> -&gt; 创建文件夹(目录)既可以创建多级文件夹,还可以创建单级文件夹</span><br><span class="line">        如果要创建的文件夹之前有,创建失败,返回<span class="literal">false</span></span><br><span class="line">        如果要创建的文件夹之前没有,创建成功,返回<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">file02</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="comment">/*boolean createNewFile()  -&gt; 创建文件</span></span><br><span class="line"><span class="comment">    如果要创建的文件之前有,创建失败,返回false</span></span><br><span class="line"><span class="comment">    如果要创建的文件之前没有,创建成功,返回true*/</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\\Idea\\io\\1.txt&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;file1.createNewFile() = &quot;</span> + file1.createNewFile());</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*boolean mkdirs() -&gt; 创建文件夹(目录)既可以创建多级文件夹,还可以创建单级文件夹</span></span><br><span class="line"><span class="comment">    如果要创建的文件夹之前有,创建失败,返回false</span></span><br><span class="line"><span class="comment">    如果要创建的文件夹之前没有,创建成功,返回true*/</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\\Idea\\io\\haha\\heihei\\hehe&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;file2.mkdirs() = &quot;</span> + file2.mkdirs());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-File类的删除方法"><a href="#6-File类的删除方法" class="headerlink" title="6.File类的删除方法"></a>6.File类的删除方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="title function_">delete</span><span class="params">()</span>-&gt;删除文件或者文件夹</span><br><span class="line"></span><br><span class="line">注意:</span><br><span class="line">  <span class="number">1.</span>如果删除文件,不走回收站</span><br><span class="line">  <span class="number">2.</span>如果删除文件夹,必须是空文件夹,而且也不走回收站    </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">file03</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">//boolean delete()-&gt;删除文件或者文件夹</span></span><br><span class="line">    <span class="comment">//File file1 = new File(&quot;E:\\Idea\\io\\1.txt&quot;);</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\\Idea\\io\\haha&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;file1.delete() = &quot;</span> + file1.delete());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-File类的判断方法"><a href="#7-File类的判断方法" class="headerlink" title="7.File类的判断方法"></a>7.File类的判断方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="title function_">isDirectory</span><span class="params">()</span> -&gt; 判断是否为文件夹 </span><br><span class="line"><span class="type">boolean</span> <span class="title function_">isFile</span><span class="params">()</span>  -&gt; 判断是否为文件</span><br><span class="line"><span class="type">boolean</span> <span class="title function_">exists</span><span class="params">()</span>  -&gt; 判断文件或者文件夹是否存在    </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">file04</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\\Idea\\io\\1.txt&quot;</span>);</span><br><span class="line">    <span class="comment">// boolean isDirectory() -&gt; 判断是否为文件夹</span></span><br><span class="line">    System.out.println(<span class="string">&quot;file.isDirectory() = &quot;</span> + file.isDirectory());</span><br><span class="line">   <span class="comment">// boolean isFile()  -&gt; 判断是否为文件</span></span><br><span class="line">    System.out.println(<span class="string">&quot;file.isFile() = &quot;</span> + file.isFile());</span><br><span class="line">   <span class="comment">// boolean exists()  -&gt; 判断文件或者文件夹是否存在</span></span><br><span class="line">    System.out.println(<span class="string">&quot;file.exists() = &quot;</span> + file.exists());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-File的遍历方法"><a href="#8-File的遍历方法" class="headerlink" title="8.File的遍历方法"></a>8.File的遍历方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String[] list() -&gt; 遍历指定的文件夹,返回的是String数组 </span><br><span class="line">File[] listFiles()-&gt; 遍历指定的文件夹,返回的是File数组 -&gt;这个推荐使用</span><br><span class="line">    </span><br><span class="line">细节:listFiles方法底层还是list方法</span><br><span class="line">     调用list方法,遍历文件夹,返回一个Stirng数组,遍历数组,将数组中的内容一个一个封装到File对象中,然后再将File对象放到File数组中</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">file05</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\\Idea\\io\\aa&quot;</span>);</span><br><span class="line">    <span class="comment">//String[] list() -&gt; 遍历指定的文件夹,返回的是String数组</span></span><br><span class="line">    String[] list = file.list();</span><br><span class="line">    <span class="keyword">for</span> (String s : list) &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//File[] listFiles()-&gt; 遍历指定的文件夹,返回的是File数组 -&gt;这个推荐使用</span></span><br><span class="line">    System.out.println(<span class="string">&quot;==============&quot;</span>);</span><br><span class="line">    File[] files = file.listFiles();</span><br><span class="line">    <span class="keyword">for</span> (File file1 : files) &#123;</span><br><span class="line">        System.out.println(file1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="练习-遍历指定文件夹下所有的-jpg文件"><a href="#练习-遍历指定文件夹下所有的-jpg文件" class="headerlink" title="练习:遍历指定文件夹下所有的.jpg文件"></a>练习:遍历指定文件夹下所有的.jpg文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>创建File对象,指定要遍历的文件夹路径</span><br><span class="line"><span class="number">2.</span>调用listFiles(),遍历文件夹,返回File数组</span><br><span class="line"><span class="number">3.</span>遍历File数组,在遍历的过程中判断,如果是文件,获取文件名,判断是否以.jpg结尾的</span><br><span class="line">  如果是,输出</span><br><span class="line"><span class="number">4.</span>否则证明是文件夹,继续调用listFiles,遍历文件夹,然后重复 <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>步骤 -&gt; 递归    </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo04File</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 1.创建File对象,指定要遍历的文件夹路径</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;E:\\Idea\\io\\aa&quot;</span>);</span><br><span class="line">        method(file);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">(File file)</span> &#123;</span><br><span class="line">       <span class="comment">// 2.调用listFiles(),遍历文件夹,返回File数组</span></span><br><span class="line">        File[] files = file.listFiles();</span><br><span class="line">        <span class="comment">// 3.遍历File数组,在遍历的过程中判断,如果是文件,获取文件名,判断是否以.jpg结尾的 如果是,输出</span></span><br><span class="line">        <span class="keyword">for</span> (File file1 : files) &#123;</span><br><span class="line">            <span class="keyword">if</span> (file1.isFile())&#123;</span><br><span class="line">                <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> file1.getName();</span><br><span class="line">                <span class="keyword">if</span> (name.endsWith(<span class="string">&quot;.jpg&quot;</span>))&#123;</span><br><span class="line">                    System.out.println(name);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="comment">// 4.否则证明是文件夹,继续调用listFiles,遍历文件夹,然后重复 2 3 4步骤 -&gt; 递归</span></span><br><span class="line">               method(file1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<img src="/2024/03/24/%E6%A8%A1%E5%9D%9721.IO%E6%B5%81/1705475385661.png" alt="1705475385661" style="zoom:80%;">
+
+<h2 id="9-相对路径和绝对路径"><a href="#9-相对路径和绝对路径" class="headerlink" title="9.相对路径和绝对路径"></a>9.相对路径和绝对路径</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>绝对路径:从盘符开始写的路径</span><br><span class="line">  E:\\idea\\io\\<span class="number">1.</span>txt</span><br><span class="line"><span class="number">2.</span>相对路径:不从盘符名开始写的路径</span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span>针对idea中写相对路径:</span><br><span class="line">  a.口诀:哪个路径是参照路径,哪个路径就可以省略不写,剩下的就是在idea中的相对路径写法</span><br><span class="line">        在idea中参照路径其实就是当前project的绝对路径</span><br><span class="line">      </span><br><span class="line">  b.比如:在module21下创建了一个<span class="number">1.</span>txt</span><br><span class="line">    先找<span class="number">1.</span>txt的绝对路径:E:\Idea\idea2022\workspace\javase\module21\<span class="number">1.</span>txt</span><br><span class="line">    再找参照路径:E:\Idea\idea2022\workspace\javase</span><br><span class="line">    参照路径可以省略:module21\<span class="number">1.</span>txt</span><br><span class="line">        </span><br><span class="line"><span class="number">4.</span>总结:</span><br><span class="line">  在idea中写的相对路径,其实就是从模块名开始写</span><br><span class="line">      </span><br><span class="line"><span class="number">5.</span>注意:</span><br><span class="line">  如果直接写一个文件名<span class="number">1.</span>txt,它所在的位置默认是在当前project下</span><br></pre></td></tr></table></figure>
+
+<h1 id="第二章-字节流"><a href="#第二章-字节流" class="headerlink" title="第二章.字节流"></a>第二章.字节流</h1><h2 id="1-IO流介绍以及输入输出以及流向的介绍"><a href="#1-IO流介绍以及输入输出以及流向的介绍" class="headerlink" title="1.IO流介绍以及输入输出以及流向的介绍"></a>1.IO流介绍以及输入输出以及流向的介绍</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>单词:</span><br><span class="line">  Output:输出</span><br><span class="line">  Input:输入</span><br><span class="line">      </span><br><span class="line">  write:写数据</span><br><span class="line">  read:读数据</span><br><span class="line">      </span><br><span class="line"><span class="number">2.</span>IO流:</span><br><span class="line">  将一个设备上的数据传输到另外一个设备上,称之为IO流技术</span><br><span class="line">      </span><br><span class="line"><span class="number">3.</span>为啥要学IO流呢?</span><br><span class="line">  之前学了一个集合以及数组,可以保存数据,但是这两个都是临时存储(代码运行完毕,集合和数组会从内存中消失,从而数据就不存在了),所以集合和数组达不到永久保存的目的,我们希望咱们的数据永久保存起来,所以我们就可以将数据保存到硬盘上,此时我们就可以随时想拿到硬盘上的数据就随时拿</span><br><span class="line">      </span><br><span class="line">  而且我们将来传输数据,必然要用到输入,输出动作    </span><br></pre></td></tr></table></figure>
+
+<h2 id="2-IO流的流向-针对se阶段的IO"><a href="#2-IO流的流向-针对se阶段的IO" class="headerlink" title="2.IO流的流向_针对se阶段的IO"></a>2.IO流的流向_针对se阶段的IO</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入流:将数据从硬盘上读到内存中  Input</span><br><span class="line">输出流:从内存出发,将数据写到硬盘上  Output</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">要是从电脑和电脑之间做数据传输,就是相对的</span><br><span class="line">    发数据一方 : 输出</span><br><span class="line">    接数据一方 : 输入</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/03/24/%E6%A8%A1%E5%9D%9721.IO%E6%B5%81/1705479517616.png" alt="1705479517616" style="zoom:80%;">
+
+<h2 id="3-IO流分类"><a href="#3-IO流分类" class="headerlink" title="3.IO流分类"></a>3.IO流分类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">字节流:万能流,一切皆字节</span><br><span class="line">      字节输出流:  OutputStream 抽象类</span><br><span class="line">      字节输入流:  InputStream 抽象类</span><br><span class="line">          </span><br><span class="line">字符流:专门操作文本文档</span><br><span class="line">      字符输出流:Writer 抽象类</span><br><span class="line">      字符输入流:Reader 抽象类</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-OutputStream中子类-FileOutputStream-的介绍以及方法的简单介绍"><a href="#4-OutputStream中子类-FileOutputStream-的介绍以及方法的简单介绍" class="headerlink" title="4.OutputStream中子类[FileOutputStream]的介绍以及方法的简单介绍"></a>4.OutputStream中子类[FileOutputStream]的介绍以及方法的简单介绍</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>概述:字节输出流,OutputStream 是一个抽象类</span><br><span class="line">       子类: FileOutputStream</span><br><span class="line"><span class="number">2.</span>作用:往硬盘上写数据</span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span>构造:</span><br><span class="line">  FileOutputStream(File file) </span><br><span class="line">  FileOutputStream(String name)</span><br><span class="line">      </span><br><span class="line"><span class="number">4.</span>特点:</span><br><span class="line">  a.指定的文件如果没有,输出流会自动创建</span><br><span class="line">  b.每执行一次,默认都会创建一个新的文件,覆盖老文件 </span><br><span class="line">      </span><br><span class="line"><span class="number">5.</span>方法:</span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">int</span> b)</span>  一次写一个字节</span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b)</span>  一次写一个字节数组</span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] b, <span class="type">int</span> off, <span class="type">int</span> len)</span>  一次写一个字节数组一部分 </span><br><span class="line">            b:写的数组</span><br><span class="line">            off:从数组的哪个索引开始写</span><br><span class="line">            len:写多少个</span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">close</span><span class="params">()</span>  -&gt; 关闭资源              </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">   void write(int b)  一次写一个字节</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method01</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;module21\\1.txt&quot;</span>);</span><br><span class="line">    fos.write(<span class="number">97</span>);</span><br><span class="line">    fos.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">   void write(byte[] b)  一次写一个字节数组</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method02</span><span class="params">()</span><span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;module21\\1.txt&quot;</span>);</span><br><span class="line">    <span class="type">byte</span>[] bytes = &#123;<span class="number">97</span>,<span class="number">98</span>,<span class="number">99</span>,<span class="number">100</span>,<span class="number">101</span>,<span class="number">102</span>,<span class="number">103</span>&#125;;</span><br><span class="line">    fos.write(bytes);</span><br><span class="line">    fos.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">     void write(byte[] b, int off, int len)  一次写一个字节数组一部分</span></span><br><span class="line"><span class="comment">         b:写的数组</span></span><br><span class="line"><span class="comment">         off:从数组的哪个索引开始写</span></span><br><span class="line"><span class="comment">         len:写多少个</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method03</span><span class="params">()</span><span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;module21\\1.txt&quot;</span>);</span><br><span class="line">    <span class="type">byte</span>[] bytes = &#123;<span class="number">97</span>,<span class="number">98</span>,<span class="number">99</span>,<span class="number">100</span>,<span class="number">101</span>,<span class="number">102</span>,<span class="number">103</span>&#125;;</span><br><span class="line">    fos.write(bytes,<span class="number">0</span>,<span class="number">2</span>);</span><br><span class="line">    fos.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">/*</span></span><br><span class="line"><span class="comment">   void write(byte[] b)  一次写一个字节数组</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method04</span><span class="params">()</span><span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;module21\\1.txt&quot;</span>);</span><br><span class="line">    <span class="comment">//byte[] bytes = &quot;abc&quot;.getBytes();</span></span><br><span class="line">    fos.write(<span class="string">&quot;abcde&quot;</span>.getBytes());</span><br><span class="line">    fos.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2024/03/24/%E6%A8%A1%E5%9D%9721.IO%E6%B5%81/1705481440854.png" alt="1705481440854" style="zoom:80%;">
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>字节流的续写追加:</span><br><span class="line">  FileOutputStream(String name, <span class="type">boolean</span> append) </span><br><span class="line">                   append:<span class="literal">true</span> -&gt; 会实现续写追加,文件不覆盖了</span><br><span class="line">                       </span><br><span class="line"><span class="number">2.</span>换行:</span><br><span class="line">  a.windows: \r\n -&gt; 占<span class="number">2</span>个字节   \n</span><br><span class="line">  b.linux: \n</span><br><span class="line">  c.mac os : \r</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method05</span><span class="params">()</span><span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;module21\\1.txt&quot;</span>,<span class="literal">true</span>);</span><br><span class="line">    fos.write(<span class="string">&quot;床前明月光\r\n&quot;</span>.getBytes());</span><br><span class="line">    fos.write(<span class="string">&quot;疑是地上霜\n&quot;</span>.getBytes());</span><br><span class="line">    fos.write(<span class="string">&quot;举头望明月\n&quot;</span>.getBytes());</span><br><span class="line">    fos.write(<span class="string">&quot;低头思故乡\n&quot;</span>.getBytes());</span><br><span class="line">    fos.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-InputStream子类-FileInputStream-的介绍以及方法的使用"><a href="#5-InputStream子类-FileInputStream-的介绍以及方法的使用" class="headerlink" title="5.InputStream子类[FileInputStream]的介绍以及方法的使用"></a>5.InputStream子类[FileInputStream]的介绍以及方法的使用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>概述:字节输入流 InputStream ,是一个抽象类</span><br><span class="line">      子类:FileInputStream</span><br><span class="line">          </span><br><span class="line"><span class="number">2.</span>作用:读数据,将数据从硬盘上读到内存中来</span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span>构造:</span><br><span class="line">  FileInputStream(File file)</span><br><span class="line">  FileInputStream(String path)  </span><br><span class="line">      </span><br><span class="line"><span class="number">4.</span>方法:</span><br><span class="line">  <span class="type">int</span> <span class="title function_">read</span><span class="params">()</span>   一次读一个字节,返回的是读取的字节</span><br><span class="line">  <span class="type">int</span> <span class="title function_">read</span><span class="params">(<span class="type">byte</span>[] b)</span>  一次读取一个字节数组,返回的是读取的字节个数</span><br><span class="line">  <span class="type">int</span> <span class="title function_">read</span><span class="params">(<span class="type">byte</span>[] b, <span class="type">int</span> off, <span class="type">int</span> len)</span>  一次读取一个字节数组一部分,返回的是读取的字节个数</span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">close</span><span class="params">()</span>  关闭资源        </span><br></pre></td></tr></table></figure>
+
+<h2 id="6-一次读取一个字节"><a href="#6-一次读取一个字节" class="headerlink" title="6.一次读取一个字节"></a>6.一次读取一个字节</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment">   int read()   一次读一个字节,返回的是读取的字节</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method01</span><span class="params">()</span><span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;module21\\1.txt&quot;</span>);</span><br><span class="line">    <span class="comment">//int data1 = fis.read();</span></span><br><span class="line">    <span class="comment">//System.out.println(data1);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//int data2 = fis.read();</span></span><br><span class="line">    <span class="comment">//System.out.println(data2);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//int data3 = fis.read();</span></span><br><span class="line">    <span class="comment">//System.out.println(data3);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//int data4 = fis.read();</span></span><br><span class="line">    <span class="comment">//System.out.println(data4);// -1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//int data5 = fis.read();</span></span><br><span class="line">    <span class="comment">//System.out.println(data5);//-1</span></span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;=================&quot;</span>);</span><br><span class="line">    <span class="comment">//定义一个变量,接收读取到的字节</span></span><br><span class="line">    <span class="type">int</span> len;</span><br><span class="line">    <span class="keyword">while</span>((len = fis.read())!=-<span class="number">1</span>)&#123;</span><br><span class="line">        System.out.println((<span class="type">char</span>)len);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>问题1:一个流对象,读完之后,就不要再读了;除非重新new一个新的对象</p>
+<p>问题2:流关闭之后,流对象不能继续使用了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread <span class="string">&quot;main&quot;</span> java.io.IOException: Stream Closed</span><br><span class="line">	at java.base/java.io.FileInputStream.read0(Native Method)</span><br><span class="line">	at java.base/java.io.FileInputStream.read(FileInputStream.java:<span class="number">228</span>)</span><br><span class="line">	at com.atguigu.c_input.Demo01FileInputStream.method01(Demo01FileInputStream.java:<span class="number">38</span>)</span><br><span class="line">	at com.atguigu.c_input.Demo01FileInputStream.main(Demo01FileInputStream.java:<span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+
+
+</blockquote>
+<h2 id="7-读取-1的问题"><a href="#7-读取-1的问题" class="headerlink" title="7.读取-1的问题"></a>7.读取-1的问题</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">每个文件末尾都会有一个<span class="string">&quot;结束标记&quot;</span>,这个<span class="string">&quot;结束标记&quot;</span>我们看不见,摸不着</span><br><span class="line">    </span><br><span class="line">而read()方法规定,如果读到了文件的结束标记,方法直接返回-<span class="number">1</span>    </span><br></pre></td></tr></table></figure>
+
+<img src="/2024/03/24/%E6%A8%A1%E5%9D%9721.IO%E6%B5%81/1705484861233.png" alt="1705484861233" style="zoom:80%;">
+
+<h2 id="8-一次读取一个字节数组以及过程"><a href="#8-一次读取一个字节数组以及过程" class="headerlink" title="8.一次读取一个字节数组以及过程"></a>8.一次读取一个字节数组以及过程</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">     int read(byte[] b)  一次读取一个字节数组,返回的是读取的字节个数</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method02</span><span class="params">()</span><span class="keyword">throws</span> Exception &#123;</span><br><span class="line">      <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;module21\\1.txt&quot;</span>);</span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">         创建一个数组:byte[]</span></span><br><span class="line"><span class="comment">          1.创建的数组相当于一个临时存储区域,我们要读取的内容会临时保存到数组中</span></span><br><span class="line"><span class="comment">            然后我们再从数组中将数据获取</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">          2.数组长度定为多少,每次读取多少个,一般情况下数组长度定为1024或者1024的倍数</span></span><br><span class="line"><span class="comment">            如果剩下的字节不够数组长度了,那么就最后有多少读多少</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">2</span>];</span><br><span class="line">      <span class="comment">//int len1 = fis.read(bytes);</span></span><br><span class="line">      <span class="comment">/*System.out.println(len1);//2</span></span><br><span class="line"><span class="comment">      System.out.println(new String(bytes,0,len1));</span></span><br><span class="line"><span class="comment">      System.out.println(&quot;===============&quot;);</span></span><br><span class="line"><span class="comment">      int len2 = fis.read(bytes);</span></span><br><span class="line"><span class="comment">      System.out.println(len2);//2</span></span><br><span class="line"><span class="comment">      System.out.println(new String(bytes,0,len2));</span></span><br><span class="line"><span class="comment">      System.out.println(&quot;===============&quot;);</span></span><br><span class="line"><span class="comment">      int len3 = fis.read(bytes);</span></span><br><span class="line"><span class="comment">      System.out.println(len3);//1</span></span><br><span class="line"><span class="comment">      System.out.println(new String(bytes,0,len3));*/</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">//定义一个变量len,接收读取的字节个数</span></span><br><span class="line">      <span class="type">int</span> len;</span><br><span class="line">      <span class="keyword">while</span>((len = fis.read(bytes))!=-<span class="number">1</span>)&#123;</span><br><span class="line">          <span class="comment">//System.out.println(new String(bytes,0,len));</span></span><br><span class="line">          System.out.println(<span class="keyword">new</span> <span class="title class_">String</span>(bytes));</span><br><span class="line">      &#125;</span><br><span class="line">      fis.close();</span><br><span class="line">  &#125;  </span><br></pre></td></tr></table></figure>
+
+<img src="/2024/03/24/%E6%A8%A1%E5%9D%9721.IO%E6%B5%81/1705485672320.png" alt="1705485672320" style="zoom:80%;">
+
+<h2 id="9-字节流实现图片复制分析"><a href="#9-字节流实现图片复制分析" class="headerlink" title="9.字节流实现图片复制分析"></a>9.字节流实现图片复制分析</h2><img src="/2024/03/24/%E6%A8%A1%E5%9D%9721.IO%E6%B5%81/1705486005239.png" alt="1705486005239" style="zoom:80%;">
+
+<h2 id="10-字节流实现图片复制代码实现"><a href="#10-字节流实现图片复制代码实现" class="headerlink" title="10.字节流实现图片复制代码实现"></a>10.字节流实现图片复制代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo01CopyFile</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span><span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//1.创建FileInputStream</span></span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;E:\\Idea\\io\\24.jpg&quot;</span>);</span><br><span class="line">        <span class="comment">//2.创建一个FileOutputStream,将读取的图片写到指定的位置</span></span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;E:\\Idea\\io\\大姐.jpg&quot;</span>);</span><br><span class="line">        <span class="comment">//3.定义一个数组</span></span><br><span class="line">        <span class="type">byte</span>[] bytes = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="comment">//4.边读边写</span></span><br><span class="line">        <span class="type">int</span> len;</span><br><span class="line">        <span class="keyword">while</span>((len = fis.read(bytes))!=-<span class="number">1</span>)&#123;</span><br><span class="line">            fos.write(bytes,<span class="number">0</span>,len);<span class="comment">//读多少个,写多少个</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//5.关流  先开后关</span></span><br><span class="line">        fos.close();</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="第三章-字符流"><a href="#第三章-字符流" class="headerlink" title="第三章.字符流"></a>第三章.字符流</h1><h2 id="1-字节流读取中文的问题"><a href="#1-字节流读取中文的问题" class="headerlink" title="1.字节流读取中文的问题"></a>1.字节流读取中文的问题</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>注意:</span><br><span class="line">  字节流是万能流,更侧重于文件复制,但是尽量不要边读边看</span><br><span class="line">      </span><br><span class="line"><span class="number">2.</span>原因:</span><br><span class="line">  UTF-<span class="number">8</span>:一个汉字占<span class="number">3</span>个字节</span><br><span class="line">  GBK:一个中文占<span class="number">2</span>个字节</span><br><span class="line">      </span><br><span class="line">  如果按照字节读取,每次读取的字节没有构成一个汉字的字节数,就直接输出,汉字是显示不了的</span><br><span class="line">      </span><br><span class="line"><span class="number">3.</span>解决: </span><br><span class="line">  将文本文档中的内容,按照字符去操作</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>话说回来:</p>
+<p>  1.按照字符去操作编码也要一致,如果不一致,照样会乱码</p>
+<p>  2.按照字节流去操作即使编码一致,边读边看,也有可能乱码</p>
+</blockquote>
+<h2 id="2-FileReader的介绍以及使用"><a href="#2-FileReader的介绍以及使用" class="headerlink" title="2.FileReader的介绍以及使用"></a>2.FileReader的介绍以及使用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符流专门操作文本文档的,但是复制操作不要用字符流,要用字节流</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>概述:字符输入流 -&gt; Reader -&gt; 是一个抽象类</span><br><span class="line">      子类:FileReader</span><br><span class="line"><span class="number">2.</span>作用:将文本文档中的内容读取到内存中来</span><br><span class="line"><span class="number">3.</span>构造:</span><br><span class="line">  FileReader(File file)</span><br><span class="line">  FileReader(String path)</span><br><span class="line"><span class="number">4.</span>方法:</span><br><span class="line">  <span class="type">int</span> <span class="title function_">read</span><span class="params">()</span> -&gt; 一次读取一个字符,返回的是读取字符对应的<span class="type">int</span>值 </span><br><span class="line">  <span class="type">int</span> <span class="title function_">read</span><span class="params">(<span class="type">char</span>[] cbuf)</span> -&gt; 一次读取一个字符数组,返回的是读取个数  </span><br><span class="line">  <span class="type">int</span> <span class="title function_">read</span><span class="params">(<span class="type">char</span>[] cbuf, <span class="type">int</span> off, <span class="type">int</span> len)</span> -&gt; 一次读取一个字符数组一部分,返回的是读取个数</span><br><span class="line">           cbuf:读取的数组</span><br><span class="line">           off:从数组的哪个索引开始读</span><br><span class="line">           len:读多少个</span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">close</span><span class="params">()</span> -&gt; 关闭资源    </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method01</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">       <span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(<span class="string">&quot;module21\\1.txt&quot;</span>);</span><br><span class="line">       <span class="type">int</span> len;</span><br><span class="line">       <span class="keyword">while</span>((len = fr.read())!=-<span class="number">1</span>)&#123;</span><br><span class="line">           System.out.println((<span class="type">char</span>) len);</span><br><span class="line">       &#125;</span><br><span class="line">       fr.close();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method02</span><span class="params">()</span><span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">FileReader</span> <span class="variable">fr</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(<span class="string">&quot;module21\\1.txt&quot;</span>);</span><br><span class="line">        <span class="type">char</span>[] chars = <span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="type">int</span> len;</span><br><span class="line">        <span class="keyword">while</span>((len = fr.read(chars))!=-<span class="number">1</span>)&#123;</span><br><span class="line">            System.out.println(<span class="keyword">new</span> <span class="title class_">String</span>(chars,<span class="number">0</span>,len));</span><br><span class="line">        &#125;</span><br><span class="line">        fr.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-FileWriter的介绍以及使用"><a href="#3-FileWriter的介绍以及使用" class="headerlink" title="3.FileWriter的介绍以及使用"></a>3.FileWriter的介绍以及使用</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>概述:字符输出流 -&gt; Writer -&gt; 抽象类</span><br><span class="line">  子类:FileWriter</span><br><span class="line"><span class="number">2.</span>作用:将数据写到文件中</span><br><span class="line"><span class="number">3.</span>构造:</span><br><span class="line">  FileWriter(File file) </span><br><span class="line">  FileWriter(String fileName)     </span><br><span class="line">  FileWriter(String fileName, <span class="type">boolean</span> append) -&gt; 追加,续写 </span><br><span class="line"><span class="number">4.</span>方法:</span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">int</span> c)</span> -&gt; 一次写一个字符 </span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">char</span>[] cbuf)</span> 一次写一个字符数组 </span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">char</span>[] cbuf, <span class="type">int</span> off, <span class="type">int</span> len)</span> 一次写一个字符数组一部分  </span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">write</span><span class="params">(String str)</span> 直接写一个字符串</span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">flush</span><span class="params">()</span>  :将缓冲区中的数据刷到文件中    </span><br><span class="line">  <span class="keyword">void</span> <span class="title function_">close</span><span class="params">()</span>  关流</span><br><span class="line">      </span><br><span class="line"><span class="number">5.</span>注意:FileWriterr底层自带一个缓冲区,我们写的数据会先保存到缓冲区中,所以我们需要将缓冲区中的数据刷到文件中      </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo01FileWriter</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span><span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">FileWriter</span> <span class="variable">fw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileWriter</span>(<span class="string">&quot;module21\\2.txt&quot;</span>);</span><br><span class="line">        fw.write(<span class="string">&quot;千山鸟飞绝\r\n&quot;</span>);</span><br><span class="line">        fw.write(<span class="string">&quot;万径人踪灭\r\n&quot;</span>);</span><br><span class="line">        fw.write(<span class="string">&quot;孤舟蓑笠翁\r\n&quot;</span>);</span><br><span class="line">        fw.write(<span class="string">&quot;独钓寒江雪\r\n&quot;</span>);</span><br><span class="line">        <span class="comment">//fw.flush();</span></span><br><span class="line">        fw.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-FileWriter的刷新功能和关闭功能"><a href="#4-FileWriter的刷新功能和关闭功能" class="headerlink" title="4.FileWriter的刷新功能和关闭功能"></a>4.FileWriter的刷新功能和关闭功能</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flush():将缓冲区中的数据刷到文件中,后续流对象还能继续使用</span><br><span class="line">close():先刷新后关闭,后续流对象不能使用了    </span><br></pre></td></tr></table></figure>
+
+<h2 id="5-IO异常处理的方式"><a href="#5-IO异常处理的方式" class="headerlink" title="5.IO异常处理的方式"></a>5.IO异常处理的方式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo01Exception</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">FileWriter</span> <span class="variable">fw</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            fw = <span class="keyword">new</span> <span class="title class_">FileWriter</span>(<span class="string">&quot;module21\\3.txt&quot;</span>);</span><br><span class="line">            fw.write(<span class="string">&quot;你好&quot;</span>);</span><br><span class="line"></span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">//如果fw不为null,证明new出来了所以需要close;相反不需要close</span></span><br><span class="line">            <span class="keyword">if</span> (fw!=<span class="literal">null</span>)&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    fw.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-JDK7之后io异常处理方式"><a href="#6-JDK7之后io异常处理方式" class="headerlink" title="6.JDK7之后io异常处理方式"></a>6.JDK7之后io异常处理方式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>格式:</span><br><span class="line">  <span class="keyword">try</span>(IO对象)&#123;</span><br><span class="line">      可能出现异常的代码</span><br><span class="line">  &#125;<span class="keyword">catch</span>(异常类型 对象名)&#123;</span><br><span class="line">      处理异常</span><br><span class="line">  &#125;</span><br><span class="line"><span class="number">2.</span>注意:</span><br><span class="line">  以上格式处理IO异常,会自动关流</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo02Exception</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span>(<span class="type">FileWriter</span> <span class="variable">fw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileWriter</span>(<span class="string">&quot;module21\\4.txt&quot;</span>);)&#123;</span><br><span class="line">            fw.write(<span class="string">&quot;你好&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">valtsit</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://valtsit.github.io/2024/03/24/%E6%A8%A1%E5%9D%9721.IO%E6%B5%81/">http://valtsit.github.io/2024/03/24/%E6%A8%A1%E5%9D%9721.IO%E6%B5%81/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">valtsit</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/03/24/%E6%A8%A1%E5%9D%9719.%E9%9B%86%E5%90%88/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.webp" class="responsive-img" alt="java_模块19.集合">
+                        
+                        <span class="card-title">java_模块19.集合</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            valtsit
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/03/24/%E6%A8%A1%E5%9D%9718.%E9%9B%86%E5%90%88/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.webp" class="responsive-img" alt="java_模块18.集合">
+                        
+                        <span class="card-title">java_模块18.集合</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            valtsit
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="599288682"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2024</span>
+            
+            <a href="/about" target="_blank">valtsit</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/valtsit" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:3493767495@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3493767495" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3493767495" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
